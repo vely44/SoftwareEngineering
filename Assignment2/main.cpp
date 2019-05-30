@@ -1,5 +1,5 @@
-#include <iostream>;
-extern ostream cerr;
+#include <iostream>
+extern ostream cerr
 using namespace std;
 static int MAX = 4800;
 static int MIN = 0;
@@ -84,7 +84,7 @@ void RotationMotor::control()
     cout<<"Select function (start, shutdown, restart,incRPM,decRPM,getRPM):"; */
     
     
-    map<string, commandfunction> cfs{
+    std::map<std::string, commandFunction> cfs{
       {"start", start}, {"shutdown", shutdown}, {"restart", restart},
        {"incRPM", incRPM}, {"decRPM", decRPM}, {"getRPM", getRPM}};
 
