@@ -1,0 +1,20 @@
+namespace motion
+{
+    class Motor
+    {
+        public:
+            Motor(const string& ID, int maxRPM):
+                ID_(ID), maxRPM_(maxRPM) {++nMotors_;}
+            ~Motor(){--nMotors_;}
+            static int get_nMotors() {return nMotors_;}
+            cont string& get_ID() cont {return ID_;}
+            int get_maxRPM() const {return maxRPM_;}
+        private:
+            static int nMotors_;
+            string ID_;
+            cont int maxRPM_;
+
+    };
+    int Motor::nMotors_=0;
+
+}

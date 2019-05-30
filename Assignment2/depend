@@ -1,0 +1,2 @@
+rpm.o: rpm.cpp rpm.h
+main.o: main.cpp rpm.h
