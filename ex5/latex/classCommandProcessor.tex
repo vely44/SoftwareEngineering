@@ -1,0 +1,121 @@
+\hypertarget{classCommandProcessor}{}\doxysection{Command\+Processor Class Reference}
+\label{classCommandProcessor}\index{CommandProcessor@{CommandProcessor}}
+
+
+\mbox{\hyperlink{classCommandProcessor}{Command\+Processor}} class.  
+
+
+
+
+{\ttfamily \#include $<$header.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommandProcessor_a2593afb28942ab7ced54b135a9dd2002}\label{classCommandProcessor_a2593afb28942ab7ced54b135a9dd2002}} 
+using {\bfseries commandfunction\+\_\+t} = std\+::function$<$ void()$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommandProcessor_a5643028cf10be143aab4e42939b22880}{Command\+Processor}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classCommandProcessor}{Command\+Processor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommandProcessor_a3a830f1939e458f31f0cd2d42855609f}{execute\+Command}} (const std\+::string \&command)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classCommandProcessor_a3a830f1939e458f31f0cd2d42855609f}{execute\+Command()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommandProcessor_aad01aa18796023ab08094994b381ab3e}{add\+Command}} (const std\+::string s, commandfunction\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classCommandProcessor_aad01aa18796023ab08094994b381ab3e}{add\+Command()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classCommandProcessor}{Command\+Processor}} class. 
+
+Description\+: Reads commands in string and then activates the function directly 
+
+Definition at line 40 of file header.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommandProcessor_a5643028cf10be143aab4e42939b22880}\label{classCommandProcessor_a5643028cf10be143aab4e42939b22880}} 
+\index{CommandProcessor@{CommandProcessor}!CommandProcessor@{CommandProcessor}}
+\index{CommandProcessor@{CommandProcessor}!CommandProcessor@{CommandProcessor}}
+\doxysubsubsection{\texorpdfstring{CommandProcessor()}{CommandProcessor()}}
+{\footnotesize\ttfamily Command\+Processor\+::\+Command\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classCommandProcessor}{Command\+Processor}}. 
+
+Description\+: Constructor 
+
+Definition at line 135 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135                                    :}
+\DoxyCodeLine{136    commands\_\{\}}
+\DoxyCodeLine{137 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommandProcessor_aad01aa18796023ab08094994b381ab3e}\label{classCommandProcessor_aad01aa18796023ab08094994b381ab3e}} 
+\index{CommandProcessor@{CommandProcessor}!addCommand@{addCommand}}
+\index{addCommand@{addCommand}!CommandProcessor@{CommandProcessor}}
+\doxysubsubsection{\texorpdfstring{addCommand()}{addCommand()}}
+{\footnotesize\ttfamily void Command\+Processor\+::add\+Command (\begin{DoxyParamCaption}\item[{const std\+::string}]{s,  }\item[{commandfunction\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classCommandProcessor_aad01aa18796023ab08094994b381ab3e}{add\+Command()}} 
+
+Description\+: a command is first prepared for certain functions 
+
+Definition at line 168 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169 \{}
+\DoxyCodeLine{170    commands\_.insert(std::pair<std::string, commandfunction\_t>(s,c));}
+\DoxyCodeLine{171    commands\_[s] = c;}
+\DoxyCodeLine{172 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCommandProcessor_a3a830f1939e458f31f0cd2d42855609f}\label{classCommandProcessor_a3a830f1939e458f31f0cd2d42855609f}} 
+\index{CommandProcessor@{CommandProcessor}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!CommandProcessor@{CommandProcessor}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void Command\+Processor\+::execute\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classCommandProcessor_a3a830f1939e458f31f0cd2d42855609f}{execute\+Command()}} 
+
+Description\+: Using find() the function is looking for a... ...command(previously made with add\+Command()) with the same name... ...with the command 
+
+Definition at line 147 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148 \{}
+\DoxyCodeLine{149    \textcolor{comment}{//p is iterator}}
+\DoxyCodeLine{150    \textcolor{keyword}{auto} p = commands\_.find(command);}
+\DoxyCodeLine{151    \textcolor{keywordflow}{if} (p != end(commands\_))}
+\DoxyCodeLine{152    \{}
+\DoxyCodeLine{153       \textcolor{keyword}{auto} commandfunc = (*p).second;}
+\DoxyCodeLine{154       commandfunc();}
+\DoxyCodeLine{155    \}}
+\DoxyCodeLine{156    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{157    \{}
+\DoxyCodeLine{158       std::cout << \textcolor{stringliteral}{"Unknown Command."} << std::endl;}
+\DoxyCodeLine{159    \}}
+\DoxyCodeLine{160 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+header.\+h\item 
+main.\+cpp\end{DoxyCompactItemize}

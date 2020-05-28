@@ -1,0 +1,204 @@
+\hypertarget{classRotationMotor}{}\doxysection{Rotation\+Motor Class Reference}
+\label{classRotationMotor}\index{RotationMotor@{RotationMotor}}
+
+
+\mbox{\hyperlink{classRotationMotor}{Rotation\+Motor}} class.  
+
+
+
+
+{\ttfamily \#include $<$header.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRotationMotor_a889048245b64b862d4d6efbdd973df05}{start}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRotationMotor_a889048245b64b862d4d6efbdd973df05}{start()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRotationMotor_a1641e42e9720c00df2fac2569c6fefed}{shutdown}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRotationMotor_a1641e42e9720c00df2fac2569c6fefed}{shutdown()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRotationMotor_ade41a143bd334cd8390c3476f5cbc913}{restart}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRotationMotor_ade41a143bd334cd8390c3476f5cbc913}{restart()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRotationMotor_a6304335fabbd5aa6c28ea612005ae9e1}{inc\+R\+PM}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRotationMotor_a6304335fabbd5aa6c28ea612005ae9e1}{inc\+R\+P\+M()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRotationMotor_aa4b5533ced57cb4e93269a6973ed8630}{dec\+R\+PM}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRotationMotor_aa4b5533ced57cb4e93269a6973ed8630}{dec\+R\+P\+M()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRotationMotor_a17c5f4b695131e4205cb4819b264c391}{get\+R\+PM}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRotationMotor_a17c5f4b695131e4205cb4819b264c391}{get\+R\+P\+M()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classRotationMotor}{Rotation\+Motor}} class. 
+
+Description\+: Control class for motor Included functions\+: void \mbox{\hyperlink{classRotationMotor_a889048245b64b862d4d6efbdd973df05}{start()}}; void \mbox{\hyperlink{classRotationMotor_a1641e42e9720c00df2fac2569c6fefed}{shutdown()}}; void \mbox{\hyperlink{classRotationMotor_ade41a143bd334cd8390c3476f5cbc913}{restart()}}; void \mbox{\hyperlink{classRotationMotor_a6304335fabbd5aa6c28ea612005ae9e1}{inc\+R\+P\+M()}}; void \mbox{\hyperlink{classRotationMotor_aa4b5533ced57cb4e93269a6973ed8630}{dec\+R\+P\+M()}}; void \mbox{\hyperlink{classRotationMotor_a17c5f4b695131e4205cb4819b264c391}{get\+R\+P\+M()}}; 
+
+Definition at line 18 of file header.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRotationMotor_aa4b5533ced57cb4e93269a6973ed8630}\label{classRotationMotor_aa4b5533ced57cb4e93269a6973ed8630}} 
+\index{RotationMotor@{RotationMotor}!decRPM@{decRPM}}
+\index{decRPM@{decRPM}!RotationMotor@{RotationMotor}}
+\doxysubsubsection{\texorpdfstring{decRPM()}{decRPM()}}
+{\footnotesize\ttfamily void Rotation\+Motor\+::dec\+R\+PM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classRotationMotor_aa4b5533ced57cb4e93269a6973ed8630}{dec\+R\+P\+M()}} 
+
+Description\+: Decrease and new value message and... ...R\+PM adjustment if the min speed is not reached 
+
+Definition at line 106 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107 \{}
+\DoxyCodeLine{108     std::cout << \textcolor{stringliteral}{"Decreasing RPM"} << std::endl;}
+\DoxyCodeLine{109     RPM -\/= RPMAdjust;}
+\DoxyCodeLine{110     \textcolor{keywordflow}{if} (RPM < RPMMin)}
+\DoxyCodeLine{111     \{}
+\DoxyCodeLine{112         RPM = RPMMin;}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{114     std::cout << \textcolor{stringliteral}{"New Value:"} << RPM << std::endl;}
+\DoxyCodeLine{115     }
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRotationMotor_a17c5f4b695131e4205cb4819b264c391}\label{classRotationMotor_a17c5f4b695131e4205cb4819b264c391}} 
+\index{RotationMotor@{RotationMotor}!getRPM@{getRPM}}
+\index{getRPM@{getRPM}!RotationMotor@{RotationMotor}}
+\doxysubsubsection{\texorpdfstring{getRPM()}{getRPM()}}
+{\footnotesize\ttfamily void Rotation\+Motor\+::get\+R\+PM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classRotationMotor_a17c5f4b695131e4205cb4819b264c391}{get\+R\+P\+M()}} 
+
+Description\+: Read and display the actual R\+PM value 
+
+Definition at line 124 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125 \{}
+\DoxyCodeLine{126     std::cout << \textcolor{stringliteral}{"RPM:"} << RPM << std::endl;}
+\DoxyCodeLine{127    \textcolor{comment}{//return RPM;}}
+\DoxyCodeLine{128 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRotationMotor_a6304335fabbd5aa6c28ea612005ae9e1}\label{classRotationMotor_a6304335fabbd5aa6c28ea612005ae9e1}} 
+\index{RotationMotor@{RotationMotor}!incRPM@{incRPM}}
+\index{incRPM@{incRPM}!RotationMotor@{RotationMotor}}
+\doxysubsubsection{\texorpdfstring{incRPM()}{incRPM()}}
+{\footnotesize\ttfamily void Rotation\+Motor\+::inc\+R\+PM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classRotationMotor_a6304335fabbd5aa6c28ea612005ae9e1}{inc\+R\+P\+M()}} 
+
+Description\+: Increase and new value message and... ...R\+PM adjustment if the max speed is not reached 
+
+Definition at line 86 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87 \{}
+\DoxyCodeLine{88     \textcolor{comment}{//Code}}
+\DoxyCodeLine{89     std::cout << \textcolor{stringliteral}{"Increasing RPM"} << std::endl;}
+\DoxyCodeLine{90     RPM += RPMAdjust;}
+\DoxyCodeLine{91     \textcolor{keywordflow}{if} (RPM > RPMMax)}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93         RPM = RPMMax;}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95     std::cout << \textcolor{stringliteral}{"New Value:"} << RPM << std::endl;}
+\DoxyCodeLine{96 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRotationMotor_ade41a143bd334cd8390c3476f5cbc913}\label{classRotationMotor_ade41a143bd334cd8390c3476f5cbc913}} 
+\index{RotationMotor@{RotationMotor}!restart@{restart}}
+\index{restart@{restart}!RotationMotor@{RotationMotor}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily void Rotation\+Motor\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classRotationMotor_ade41a143bd334cd8390c3476f5cbc913}{restart()}} 
+
+Description\+: Restart message + R\+PM = 0 
+
+Definition at line 71 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73     \textcolor{comment}{//Code}}
+\DoxyCodeLine{74     std::cout << \textcolor{stringliteral}{"Restarting"} << std::endl;}
+\DoxyCodeLine{75     RPM = 0;}
+\DoxyCodeLine{76     }
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRotationMotor_a1641e42e9720c00df2fac2569c6fefed}\label{classRotationMotor_a1641e42e9720c00df2fac2569c6fefed}} 
+\index{RotationMotor@{RotationMotor}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!RotationMotor@{RotationMotor}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily void Rotation\+Motor\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classRotationMotor_a1641e42e9720c00df2fac2569c6fefed}{shutdown()}} 
+
+Description\+: Shutdown message + R\+PM = 0 
+
+Definition at line 56 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \textcolor{comment}{//Code}}
+\DoxyCodeLine{59     std::cout << \textcolor{stringliteral}{"Shutting down..."} << std::endl;}
+\DoxyCodeLine{60     RPM = 0;}
+\DoxyCodeLine{61    }
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRotationMotor_a889048245b64b862d4d6efbdd973df05}\label{classRotationMotor_a889048245b64b862d4d6efbdd973df05}} 
+\index{RotationMotor@{RotationMotor}!start@{start}}
+\index{start@{start}!RotationMotor@{RotationMotor}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Rotation\+Motor\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classRotationMotor_a889048245b64b862d4d6efbdd973df05}{start()}} 
+
+Description\+: Display possible commands 
+
+Definition at line 32 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34    }
+\DoxyCodeLine{35    std::cout << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"} << std::endl;}
+\DoxyCodeLine{36    std::cout << \textcolor{stringliteral}{"Starting up..."} << std::endl;}
+\DoxyCodeLine{37    std::cout << \textcolor{stringliteral}{"Insert Command:"} << std::endl;}
+\DoxyCodeLine{38    std::cout << \textcolor{stringliteral}{"shutdown"} << std::endl;}
+\DoxyCodeLine{39    std::cout << \textcolor{stringliteral}{"restart"} << std::endl;}
+\DoxyCodeLine{40    std::cout << \textcolor{stringliteral}{"incRPM"} << std::endl;}
+\DoxyCodeLine{41    std::cout << \textcolor{stringliteral}{"decRPM"} << std::endl;}
+\DoxyCodeLine{42    std::cout << \textcolor{stringliteral}{"getRPM"} << std::endl;}
+\DoxyCodeLine{43    std::cout << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"} << std::endl;}
+\DoxyCodeLine{44    std::cout << \textcolor{stringliteral}{"Actual Speed:"} << std::endl;}
+\DoxyCodeLine{45    std::cout << \textcolor{stringliteral}{"0"} << std::endl;}
+\DoxyCodeLine{46    std::cout << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"} << std::endl;}
+\DoxyCodeLine{47    }
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+header.\+h\item 
+main.\+cpp\end{DoxyCompactItemize}
