@@ -4,11 +4,13 @@
 
 int main()
 {
+   //Init part
    std::string input;
    RotationMotor motor;
    std::cout << "Welcome to the Control Panel" << std::endl;
    std::cout << "Type <start> to begin..." << std::endl;
-
+   
+   //Loop
    while(1)
    {
         std::cin >> input;
@@ -31,6 +33,8 @@ int main()
    return 0;
 }
 
+
+//Class Functions
 void RotationMotor::start (){
    std::string command;
    
