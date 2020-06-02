@@ -10,6 +10,7 @@ int main()
         // Using C++11 uniform initialisation by an initializer_list {...}
         array <int, 3> ar{2, -2, 3};
         array <int, 3> ar2{0, 0, 0};
+        
         // Range-based for loop, el is not the index of a specific
         // element in the array!
         // e1 is a reference to an array element in ar (we used &),
@@ -54,13 +55,14 @@ int main()
         cout << "Running the Motor Driver"<< endl;
 
 
-    //Array of 4 RotationMotor objects.
+   //Array of 4 RotationMotor objects.
    std::array<RotationMotor, 4> map;
    int i=0;//aux counter
 
    //Use a range based for loop for setting RPM of all motors.
    for ( auto x: map)
    {
+      //Increase RPM all 4 motors
       x.incRPM();
       
       std::cout << x.getRPM() << std::endl;
