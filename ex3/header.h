@@ -1,4 +1,5 @@
 //Header file
+//Class RotationMotor
 class RotationMotor 
 {
    int RPM = 0;
